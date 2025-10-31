@@ -2,23 +2,23 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="株式会社ままよろ 神谷真太郎 - システム開発という名の芸術">
-    <title>神谷真太郎 - システム開発という名の芸術</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="株式会社ままよろ サービス価格表 - 明確な料金体系でビジネスのDXを支援">
+    <title>料金プラン - 株式会社ままよろ</title>
     <style>
         :root {
-            --gold-primary: #d4af37;
-            --gold-secondary: #c9b037;
-            --gold-light: #f4e4c1;
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #1a1a1a;
-            --bg-tertiary: #151515;
-            --text-primary: #e8e8e8;
-            --text-secondary: #c4c4c4;
-            --text-tertiary: #999;
+            --primary-navy: #2c3e50;
+            --primary-blue: #3498db;
+            --accent-blue: #5dade2;
+            --success-green: #27ae60;
+            --warning-orange: #e67e22;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-gray: #ecf0f1;
+            --text-dark: #2c3e50;
+            --text-gray: #7f8c8d;
+            --text-light: #95a5a6;
+            --border-light: #e0e0e0;
         }
 
         * {
@@ -33,44 +33,34 @@
 
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.8;
-            overflow-x: hidden;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.7;
         }
 
-        /* Navigation */
-        .nav {
-            position: fixed;
+        /* Header */
+        .header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 2rem;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
             z-index: 1000;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        .nav.visible {
-            transform: translateY(0);
-        }
-
-        .nav-container {
+        .header-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .nav-logo {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: var(--gold-primary);
-            letter-spacing: 0.1em;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-navy);
         }
 
         .nav-links {
@@ -80,746 +70,774 @@
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--text-gray);
             text-decoration: none;
             font-size: 0.95rem;
-            font-weight: 300;
-            letter-spacing: 0.05em;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--gold-primary);
+            color: var(--primary-blue);
         }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2px;
-            background: var(--gold-primary);
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
-            min-height: 100vh;
-            background: radial-gradient(ellipse at top, #1a1a2e 0%, var(--bg-primary) 50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding: 2rem;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(201, 176, 55, 0.06) 0%, transparent 50%);
-            animation: pulseGlow 8s ease-in-out infinite;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #34495e 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
         }
 
         .hero-content {
-            text-align: center;
-            z-index: 1;
-            max-width: 900px;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(0.9rem, 3vw, 1.2rem);
-            font-weight: 300;
-            letter-spacing: 0.4em;
-            color: var(--gold-primary);
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 10vw, 5rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 0.05em;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
 
-        .hero-description {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            font-weight: 300;
-            color: var(--text-secondary);
-            line-height: 2;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--gold-primary);
-            opacity: 0.7;
-            animation: bounce 2s infinite;
-            text-align: center;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
-
-        .scroll-icon {
-            font-size: 2rem;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-        }
-
-        .scroll-text {
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            letter-spacing: 0.2em;
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            opacity: 0.9;
             font-weight: 300;
         }
 
-        /* Common Section Styles */
+        /* Section Common */
         section {
-            padding: clamp(4rem, 10vw, 8rem) 2rem;
+            padding: 5rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: clamp(2rem, 6vw, 3rem);
-            font-weight: 300;
-            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            color: var(--primary-navy);
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+            border-radius: 2px;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            color: var(--text-tertiary);
-            margin-bottom: clamp(3rem, 8vw, 5rem);
-            font-weight: 300;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
         }
 
-        /* Philosophy Section */
-        .philosophy {
-            background: linear-gradient(to bottom, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
-        }
-
-        .philosophy-content {
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: clamp(1.1rem, 3vw, 1.4rem);
-            line-height: 2.2;
-            text-align: center;
-            color: var(--text-secondary);
-            font-weight: 300;
-        }
-
-        .philosophy-content p {
-            margin-bottom: 2rem;
-            font-family: 'Noto Serif JP', serif !important;
-            transform: skewX(-5deg) !important;
-            font-size: clamp(1.2rem, 3vw, 1.4rem) !important;
-            color: var(--text-secondary);
-        }
-
-        .philosophy-content p * {
-            transform: none;
-        }
-
-        .philosophy-quote {
+        /* Service Overview */
+        .service-overview {
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 50%, #e8eaf6 100%);
             position: relative;
-            padding: 2rem 1rem;
-            margin-bottom: 3rem !important;
-            opacity: 0.95;
-            display: block;
         }
 
-        .philosophy-quote::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-        }
-
-        .philosophy-quote::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-        }
-
-        /* AI Philosophy Section */
-        .ai-philosophy {
-            background: linear-gradient(to bottom, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-        }
-
-        .ai-philosophy-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .ai-philosophy-card {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-            border-radius: 20px;
-            padding: 3rem 2.5rem;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ai-philosophy-card::before {
+        .service-overview::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+            height: 4px;
+            background: linear-gradient(90deg, #5C6BC0, #3F51B5, #5C6BC0);
         }
 
-        .ai-philosophy-text {
-            position: relative;
-            z-index: 1;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            line-height: 2;
-            color: var(--text-secondary);
-            font-weight: 300;
-        }
-
-        .ai-philosophy-text p {
-            margin-bottom: 2rem;
-        }
-
-        .ai-philosophy-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .ai-problem {
-            color: var(--text-tertiary);
-        }
-
-        .ai-highlight {
-            color: var(--text-primary);
-            font-weight: 400;
-        }
-
-        .ai-emphasis {
-            display: inline-block;
-            padding: 0.1em 0.5em;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(201, 176, 55, 0.3) 100%);
-            color: var(--gold-light);
-            border-bottom: 2px solid var(--gold-primary);
-            font-weight: 500;
-            margin: 0 0.2em;
-        }
-
-        .ai-conclusion {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            font-weight: 400;
-            color: var(--gold-primary);
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .philosophy-highlight {
-            display: inline-block;
-            padding: 0.1em 0.5em;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(201, 176, 55, 0.3) 100%);
-            color: var(--gold-light);
-            border-bottom: 2px solid var(--gold-primary);
-            font-weight: 400;
-            margin: 0 0.2em;
-        }
-
-        /* Values Section */
-        .values {
-            background: var(--bg-primary);
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .value-card {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-            border-radius: 20px;
-            padding: 2.5rem;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .value-card::before {
+        .service-overview::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transition: left 0.7s ease;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #5C6BC0, #3F51B5, #5C6BC0);
         }
 
-        .value-card:hover::before {
-            left: 100%;
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .value-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+        .overview-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--border-light);
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        .value-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+        .overview-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+            border-color: var(--primary-blue);
         }
 
-        .value-title {
-            font-size: clamp(1.2rem, 3.5vw, 1.5rem);
-            font-weight: 400;
+        .overview-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--gold-light);
-            letter-spacing: 0.05em;
-            min-height: 2.8em;
-            display: flex;
-            align-items: center;
         }
 
-        .value-description {
-            color: var(--text-tertiary);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            font-size: clamp(0.9rem, 2.3vw, 1rem);
-            min-height: 5.4em;
+        .overview-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
         }
 
-        .value-points {
-            list-style: none;
-            padding: 0;
-            flex-grow: 1;
+        .overview-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
         }
 
-        .value-points li {
-            padding: 0.6rem 0;
-            padding-left: 1.8rem;
-            position: relative;
-            color: var(--text-tertiary);
-            font-weight: 300;
-            transition: color 0.3s ease;
-            font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+        .overview-description {
+            color: var(--text-gray);
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
-        .value-points li:hover {
-            color: var(--gold-primary);
+        /* Speed Pack */
+        .speed-pack {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            position: relative;
         }
 
-        .value-points li::before {
-            content: '◆';
+        .speed-pack::before {
+            content: '';
             position: absolute;
+            top: 0;
             left: 0;
-            color: var(--gold-primary);
-            font-size: 0.8rem;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
         }
 
-        /* Comparison Section */
-        .comparison {
-            background: linear-gradient(to bottom, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
-        }
-
-        .comparison-intro {
-            text-align: center;
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
-            color: var(--text-tertiary);
-            margin-bottom: 4rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 300;
-            line-height: 1.9;
-        }
-
-        .comparison-intro strong {
-            color: var(--gold-primary);
-            font-weight: 400;
-        }
-
-        .comparison-container {
+        .pack-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
-        .comparison-side {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            transition: all 0.5s ease;
+        .pack-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        .comparison-side.generic {
-            opacity: 0.7;
-        }
-
-        .comparison-side.kamiya {
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
-        }
-
-        .comparison-side.kamiya:hover {
-            border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
+        .pack-item:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
             transform: translateY(-5px);
+            border-color: var(--primary-blue);
         }
 
-        .comparison-label {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            font-weight: 400;
+        .pack-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .pack-price {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pack-period {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pack-description {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Full Support */
+        .full-support {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #e3f2fd 100%);
+            position: relative;
+        }
+
+        .full-support::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2196F3, #1976D2, #2196F3);
+        }
+
+        .full-support::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2196F3, #1976D2, #2196F3);
+        }
+
+        .support-highlight {
+            background: white;
+            border: 3px solid var(--primary-blue);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+            box-shadow: 0 12px 48px rgba(52, 152, 219, 0.25);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .price-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .price-option {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .price-option-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-option-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-option-detail {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            border: 2px solid rgba(52, 152, 219, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            color: var(--primary-navy);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-content p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .process-flow {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border: 2px solid rgba(52, 152, 219, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .process-step {
             text-align: center;
             padding: 1.5rem;
-            margin-bottom: 2rem;
+            background: white;
             border-radius: 10px;
-            letter-spacing: 0.05em;
+            position: relative;
+            border: 2px solid var(--border-light);
+            transition: all 0.3s ease;
         }
 
-        .comparison-side.generic .comparison-label {
-            background: rgba(255, 255, 255, 0.03);
-            color: var(--text-tertiary);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .process-step:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+            transform: translateY(-3px);
         }
 
-        .comparison-side.kamiya .comparison-label {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(201, 176, 55, 0.1) 100%);
-            color: var(--gold-light);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        .process-step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
 
-        .comparison-features {
+        .process-step-title {
+            font-weight: 600;
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step-description {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* DX Support */
+        .dx-support {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 50%, #fff8e1 100%);
+            position: relative;
+        }
+
+        .dx-support::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF9800, #F57C00, #FF9800);
+        }
+
+        .dx-support::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF9800, #F57C00, #FF9800);
+        }
+
+        .support-card {
+            background: white;
+            border: 3px solid var(--warning-orange);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 900px;
+            margin: 2rem auto;
+            box-shadow: 0 12px 48px rgba(230, 126, 34, 0.25);
+        }
+
+        .support-price-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+            border: 2px solid var(--primary-blue);
+        }
+
+        .support-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .support-period {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+
+        .included-list {
             list-style: none;
             padding: 0;
+            margin: 2rem 0;
         }
 
-        .comparison-features li {
-            padding: 1rem;
-            margin-bottom: 0.5rem;
-            border-left: 2px solid rgba(255, 255, 255, 0.1);
-            padding-left: 1rem;
-            color: var(--text-tertiary);
-            font-weight: 300;
+        .included-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-dark);
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .included-list li:last-child {
+            border-bottom: none;
+        }
+
+        .included-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Customer Journey */
+        .customer-journey {
+            background: linear-gradient(135deg, #f1f8e9 0%, #dcedc8 50%, #f1f8e9 100%);
+            position: relative;
+        }
+
+        .customer-journey::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8BC34A, #689F38, #8BC34A);
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .journey-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid var(--border-light);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
-        .comparison-side.kamiya .comparison-features li {
-            border-left-color: rgba(212, 175, 55, 0.3);
-            background: linear-gradient(90deg, rgba(212, 175, 55, 0.08) 0%, transparent 100%);
-            color: var(--text-secondary);
+        .journey-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-3px);
         }
 
-        .comparison-screenshot {
-            margin-top: 1.5rem;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-        }
-
-        .comparison-screenshot-content {
-            background: #1a1a1a;
-            padding: 1.5rem;
-            min-height: 280px;
-        }
-
-        .screenshot-caption {
-            padding: 0.8rem;
+        .journey-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
             text-align: center;
-            font-size: clamp(0.8rem, 2vw, 0.95rem);
-            font-weight: 300;
-            background: rgba(0,0,0,0.3);
-            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        .generic-caption {
-            color: #666;
-        }
-
-        .kamiya-caption {
-            color: var(--gold-secondary);
-            background: rgba(212, 175, 55, 0.05);
-            border-top-color: rgba(212, 175, 55, 0.2);
-        }
-
-        /* Generic Screenshot Styles */
-        .generic-screenshot {
-            background: #0d0d0d;
-        }
-
-        .generic-table {
-            font-size: clamp(0.7rem, 1.8vw, 0.85rem);
-        }
-
-        .generic-header {
-            display: grid;
-            grid-template-columns: 2fr 1.2fr 1fr 1fr;
-            gap: 0;
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-        }
-
-        .generic-header .generic-cell {
-            padding: 0.6rem 0.8rem;
-            font-weight: 500;
-            color: #888;
-            border-right: 1px solid #2a2a2a;
-            background: #151515;
-        }
-
-        .generic-row {
-            display: grid;
-            grid-template-columns: 2fr 1.2fr 1fr 1fr;
-            gap: 0;
-            border: 1px solid #2a2a2a;
-            border-top: none;
-        }
-
-        .generic-row .generic-cell {
-            padding: 0.6rem 0.8rem;
-            color: #999;
-            border-right: 1px solid #2a2a2a;
-            background: #0d0d0d;
-        }
-
-        .generic-row:nth-child(even) .generic-cell {
-            background: #111;
-        }
-
-        /* Kamiya Screenshot Styles */
-        .kamiya-screenshot {
-            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
-        }
-
-        .kamiya-dashboard {
+        .journey-flow {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
 
-        .kamiya-stats {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-bar {
-            position: relative;
-            background: rgba(255,255,255,0.05);
-            border-radius: 8px;
-            padding: 0.5rem;
-            overflow: hidden;
-        }
-
-        .stat-label {
-            position: relative;
-            z-index: 2;
-            font-size: clamp(0.65rem, 1.6vw, 0.75rem);
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        .stat-fill {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: var(--value);
-            background: linear-gradient(90deg, var(--color), transparent);
-            opacity: 0.3;
-        }
-
-        .kamiya-cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.8rem;
-        }
-
-        .kamiya-card {
-            background: linear-gradient(135deg, rgba(42, 42, 42, 0.6) 0%, rgba(26, 26, 26, 0.4) 100%);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
+        .journey-step {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
             padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            color: var(--primary-navy);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .journey-arrow {
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+
+        /* FAQ */
+        .faq {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #fce4ec 100%);
+            position: relative;
+        }
+
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #E91E63, #C2185B, #E91E63);
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             transition: all 0.3s ease;
         }
 
-        .kamiya-card.highlight {
-            border-color: rgba(212, 175, 55, 0.4);
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(26, 26, 26, 0.4) 100%);
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .card-header {
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-navy);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.6rem;
+            transition: background 0.3s ease;
         }
 
-        .card-icon {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
+        .faq-question:hover {
+            background: #f5f5f5;
         }
 
-        .card-status {
-            font-size: clamp(0.6rem, 1.5vw, 0.7rem);
-            padding: 0.3rem 0.6rem;
-            border-radius: 20px;
-            font-weight: 500;
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-blue);
         }
 
-        .card-status.active {
-            background: rgba(212, 175, 55, 0.2);
-            color: var(--gold-light);
+        .faq-question.active::after {
+            content: '−';
         }
 
-        .card-status.proposal {
-            background: rgba(100, 150, 200, 0.2);
-            color: #8db4d4;
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-gray);
         }
 
-        .card-title {
-            font-size: clamp(0.75rem, 2vw, 0.9rem);
-            font-weight: 400;
-            color: var(--text-primary);
-            margin-bottom: 0.6rem;
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
         }
 
-        .card-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: clamp(0.65rem, 1.6vw, 0.75rem);
-            color: var(--text-tertiary);
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
         }
 
-        .card-amount {
-            color: var(--gold-primary);
-            font-weight: 500;
+        .cta-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
 
-        .comparison-notes {
-            margin-top: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .comparison-note {
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
-            color: var(--text-tertiary);
-            padding-left: 0.5rem;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .screenshot-image:hover {
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
-            transform: scale(1.02);
         }
 
-        .comparison-notes {
-            margin-top: 1.5rem;
+        .cta-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .comparison-note {
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
-            color: var(--text-tertiary);
-            padding-left: 0.5rem;
-            font-weight: 300;
-            line-height: 1.6;
+        .cta-button {
+            padding: 1.2rem 3rem;
+            background: white;
+            color: var(--primary-navy);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        .comparison-side.kamiya .comparison-note {
-            color: var(--gold-primary);
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        /* Image Modal Styles */
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: var(--primary-navy);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact {
+            margin: 1.5rem 0;
+        }
+
+        .footer-email {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .footer-email:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-orange);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .info-box-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box-content {
+            color: #856404;
+            font-size: 0.95rem;
+        }
+
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
-            z-index: 10000;
+            z-index: 2000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
+            background-color: rgba(0, 0, 0, 0.8);
             animation: fadeIn 0.3s ease;
         }
 
@@ -829,779 +847,1052 @@
             justify-content: center;
         }
 
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-gray);
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: var(--bg-light);
+            color: var(--primary-navy);
+        }
+
+        /* Image Slider */
+        .image-slider {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 1rem auto;
+            overflow: hidden;
+            border-radius: 10px;
+            touch-action: pan-y pinch-zoom;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .slider-image {
+            width: 100%;
+            flex-shrink: 0;
+            border-radius: 10px;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .slider-nav:hover {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .slider-nav.prev {
+            left: 10px;
+        }
+
+        .slider-nav.next {
+            right: 10px;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1rem;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: var(--primary-blue);
+            width: 24px;
+            border-radius: 5px;
+        }
+
+        .pack-image-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 2px solid var(--border-light);
+            cursor: pointer;
+        }
+
+        .pack-image-container:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .pack-slider-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform 0.3s ease;
+            touch-action: pan-y pinch-zoom;
+        }
+
+        .pack-image-preview {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+            object-fit: cover;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .pack-slider-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .pack-slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .pack-slider-dot.active {
+            background: white;
+            width: 20px;
+            border-radius: 4px;
+        }
+
+        .pack-expand-hint {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            z-index: 10;
+            pointer-events: none;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        .modal-content {
-            max-width: 90%;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-            animation: zoomIn 0.3s ease;
-        }
-
-        @keyframes zoomIn {
-            from {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            font-size: 3rem;
-            color: var(--gold-primary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10001;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0,0,0,0.5);
-            border-radius: 50%;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .modal-close:hover {
-            transform: rotate(90deg) scale(1.1);
-            background: rgba(212, 175, 55, 0.2);
-            border-color: var(--gold-primary);
-        }
-
-        .comparison-screenshot-content {
-            background: #0a0a0a;
-            padding: 0.5rem;
-            min-height: auto;
-            border-radius: 8px;
-        }
-
-        .screenshot-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-        }
-
-        .screenshot-image:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
-        }
-
-        .comparison-screenshot-content {
-            background: transparent;
-            padding: 0;
-            min-height: auto;
-        }
-
-        .comparison-notes {
-            margin-top: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .comparison-note {
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
-            color: var(--text-tertiary);
-            padding-left: 0.5rem;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .comparison-side.kamiya .comparison-note {
-            color: var(--gold-primary);
-        }
-
-        @media (max-width: 768px) {
-            .modal-close {
-                top: 1rem;
-                right: 1rem;
-                font-size: 2rem;
-                width: 40px;
-                height: 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .modal-content {
-                max-width: 95%;
-            }
-        }
-
-        /* Results Section */
-        .results {
-            background: var(--bg-primary);
-        }
-
-        .results-philosophy {
-            text-align: center;
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
-            color: var(--text-secondary);
-            margin-bottom: 4rem;
-            font-weight: 300;
-            line-height: 2;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .results-philosophy-highlight {
-            display: inline-block;
-            padding: 0.1em 0.5em;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(201, 176, 55, 0.3) 100%);
-            border-bottom: 2px solid var(--gold-primary);
-            font-weight: 400;
-            margin: 0 0.2em;
-        }
-
-        .results-philosophy-zero {
-            font-size: 1.4em;
-            color: var(--gold-primary);
-            font-weight: 500;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .result-card {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .result-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .result-card:hover::before {
-            opacity: 1;
-        }
-
-        .result-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
-        }
-
-        .result-icon {
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            margin-bottom: 1rem;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
-        }
-
-        .result-task {
-            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-            min-height: 4.5em;
-            font-weight: 300;
-            flex-grow: 1;
-        }
-
-        .result-time {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
-            margin-top: auto;
-        }
-
-        .result-before {
-            color: var(--text-tertiary);
-            font-weight: 300;
-        }
-
-        .result-arrow {
-            color: var(--gold-primary);
-            font-size: 1.5em;
-        }
-
-        .result-after {
-            font-size: 1.8em;
-            font-weight: 600;
-            color: var(--gold-primary);
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            text-align: center;
-            position: relative;
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at top, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .cta-title {
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 0.05em;
-        }
-
-        .cta-description {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            margin-bottom: 3rem;
-            color: var(--text-tertiary);
-            font-weight: 300;
-            line-height: 2;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: clamp(1rem, 3vw, 1.5rem) clamp(2.5rem, 6vw, 4rem);
-            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-secondary) 100%);
-            color: var(--bg-primary);
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            transition: all 0.5s ease;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-            border: 1px solid rgba(212, 175, 55, 0.5);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.5);
-        }
-
-        .cta-company {
-            margin-top: 3rem;
-            color: var(--text-tertiary);
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            font-weight: 300;
-            letter-spacing: 0.1em;
-        }
-
-        /* Sticky CTA (Mobile) */
-        .sticky-cta {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            z-index: 999;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .sticky-cta.visible {
-            transform: translateY(0);
-        }
-
-        .sticky-cta-button {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-secondary) 100%);
-            color: var(--bg-primary);
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .nav-links {
-                position: fixed;
-                top: 60px;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                background: rgba(10, 10, 10, 0.98);
-                backdrop-filter: blur(20px);
-                padding: 2rem;
-                gap: 1.5rem;
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-                border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            }
-
-            .nav-links.active {
-                transform: translateX(0);
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .sticky-cta {
-                display: block;
-            }
-        }
-
         @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
             section {
-                padding: clamp(3rem, 8vw, 6rem) 1.5rem;
+                padding: 3rem 1.5rem;
             }
 
-            .scroll-indicator {
-                display: none;
-            }
-        }
-
-        @media (max-width: 480px) {
             .hero {
-                min-height: 85vh;
+                padding: 3rem 1.5rem;
+            }
+
+            .support-highlight,
+            .support-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .slider-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 1.3rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav-container">
-            <div class="nav-logo">KAMIYA SHINTARO</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#philosophy">Philosophy</a></li>
-                <li><a href="#values">Values</a></li>
-                <li><a href="#ai">AI</a></li>
-                <li><a href="#difference">Difference</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">株式会社ままよろ</div>
+            <ul class="nav-links">
+                <li><a href="#overview">サービス概要</a></li>
+                <li><a href="#speed-pack">スピード導入</a></li>
+                <li><a href="#full-support">フルサポート</a></li>
+                <li><a href="#dx-support">DX支援</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero -->
     <div class="hero">
         <div class="hero-content">
-            <div class="hero-subtitle">担当</div>
-            <h1 class="hero-title">神谷真太郎</h1>
-            <p class="hero-description">
-                業務効率化という芸術作品。<br>
-                圧倒的で感動的な体験をお届けします。
+            <h1 class="hero-title">料金説明</h1>
+            <p class="hero-subtitle">
+                お客様の課題と段階に合わせた、明確な料金プラン。<br>
+                IT導入補助金で最大50%の負担軽減も可能です。
             </p>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-icon">↓</div>
-            <div class="scroll-text">SCROLL</div>
-        </div>
     </div>
 
-    <!-- Philosophy -->
-    <section class="philosophy" id="philosophy">
-        <h2 class="section-title">Philosophy</h2>
-        <p class="section-subtitle">システム開発へのこだわり</p>
-        <div class="philosophy-content">
-            <div class="philosophy-quote">
-                <p>
-                    " システムは<span class="philosophy-highlight">道具</span>ではない。<br>
-                    それは、ビジネスを変革し、人々の働き方を進化させる<span class="philosophy-highlight">芸術作品</span>である。
-                </p>
-                <p>
-                    多くの企業が「動けばいい」システムに満足している。<br>
-                    しかし本当に価値あるシステムとは、使う人を<span class="philosophy-highlight">感動</span>させ、<br>
-                    業務を<span class="philosophy-highlight">楽しく</span>し、組織全体を<span class="philosophy-highlight">前進</span>させるものだ。"
-                </p>
+    <!-- Service Overview -->
+    <section class="service-overview" id="overview">
+        <h2 class="section-title">3つのサービス</h2>
+        <p class="section-subtitle">導入から運用まで、段階に応じた最適なサポート</p>
+        
+        <div class="overview-grid">
+            <div class="overview-card">
+                <div class="overview-number">1</div>
+                <div class="overview-title">スピード導入パック</div>
+                <div class="overview-price">50〜70万円(買い切り)</div>
+                <div class="overview-description">
+                    既存機能から選んで、すぐに導入。<br>
+                    名刺管理、議事録、タスク管理など、<br>
+                    1機能から購入可能。
+                </div>
+            </div>
+
+            <div class="overview-card">
+                <div class="overview-number">2</div>
+                <div class="overview-title">フルサポート開発</div>
+                <div class="overview-price">月額45万円〜 / 一括払いも可</div>
+                <div class="overview-description">
+                    コンサルから業務設計、構築まで全てお任せ。<br>
+                    要件変更にも柔軟に対応。<br>
+                    月単位で進められるアジャイル開発。
+                </div>
+            </div>
+
+            <div class="overview-card">
+                <div class="overview-number">3</div>
+                <div class="overview-title">継続DX支援プラン</div>
+                <div class="overview-price">月額10万円</div>
+                <div class="overview-description">
+                    納品後の運用サポート。<br>
+                    保守＋DX/AI/IT相談し放題＋月1MTG。<br>
+                    継続的な改善をサポート。
+                </div>
+            </div>
+        </div>
+
+        <div style="max-width: 900px; margin: 3rem auto; padding: 2.5rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 15px; border: 2px solid var(--border-light);">
+            <h3 style="color: var(--primary-navy); font-size: 1.3rem; margin-bottom: 1.5rem; text-align: center;">💡 サービス活用例</h3>
+            <p style="text-align: center; color: var(--text-gray); margin-bottom: 2rem; font-size: 0.95rem;">以下は典型的な活用パターンの例です。お客様の状況に応じて最適なプランをご提案します。</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--primary-blue);">
+                    <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">小規模スタートの例</div>
+                    <div style="color: var(--text-gray); font-size: 0.9rem;">スピード導入パック → 継続DX支援プラン</div>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--success-green);">
+                    <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">本格DX推進の例</div>
+                    <div style="color: var(--text-gray); font-size: 0.9rem;">フルサポート開発 → 継続DX支援プラン</div>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--warning-orange);">
+                    <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">既存システムありの例</div>
+                    <div style="color: var(--text-gray); font-size: 0.9rem;">継続DX支援プランのみ契約</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Values -->
-    <section class="values" id="values">
-        <h2 class="section-title">Three Values</h2>
-        <p class="section-subtitle">神谷だけが提供できる、3つの本質的価値</p>
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-icon">🤝</div>
-                <h3 class="value-title">01. 寄り添う開発</h3>
-                <p class="value-description">
-                    技術者ではなく、パートナーとして。あなたのビジネスを真に理解し、共に最適解を探求します。
-                </p>
-                <ul class="value-points">
-                    <li>「できません」で終わらない代替案提案</li>
-                    <li>業務フローを理解した上での設計</li>
-                    <li>導入後も継続する改善サポート</li>
-                    <li>言葉の壁を感じさせない対話</li>
-                </ul>
+    <!-- Speed Pack Details -->
+    <section class="speed-pack" id="speed-pack">
+        <h2 class="section-title">スピード導入パック</h2>
+        <p class="section-subtitle">既存機能から選べる、即導入可能なパッケージ</p>
+        
+        <div class="pack-grid">
+            <div class="pack-item">
+                <img src="./images/meishi-1.jpg" alt="名刺管理ツール" class="pack-image-preview" onclick="openModal('meishi-modal')">
+                <div class="pack-name">名刺管理ツール</div>
+                <div class="pack-price">50万円〜</div>
+                <div class="pack-period">納期: 1ヶ月〜</div>
+                <div class="pack-description">名刺OCR登録、顧客管理、検索機能</div>
             </div>
 
-            <div class="value-card">
-                <div class="value-icon">✨</div>
-                <h3 class="value-title">02. デザインへのこだわり</h3>
-                <p class="value-description">
-                    美しく、直感的で、使いたくなるシステム。機能だけでなく、体験そのものをデザインします。
-                </p>
-                <ul class="value-points">
-                    <li>モバイルファーストの快適な操作性</li>
-                    <li>説明不要の直感的なUI設計</li>
-                    <li>細部まで配慮した美しいビジュアル</li>
-                    <li>待ち時間を感じさせないUX最適化</li>
-                </ul>
+            <div class="pack-item">
+                <img src="./images/gijiroku-1.jpg" alt="議事録自動化" class="pack-image-preview" onclick="openModal('gijiroku-modal')">
+                <div class="pack-name">議事録自動化</div>
+                <div class="pack-price">60万円〜</div>
+                <div class="pack-period">納期: 1ヶ月〜</div>
+                <div class="pack-description">Notta連携、AI要約、LINE通知</div>
             </div>
 
-            <div class="value-card">
-                <div class="value-icon">🎯</div>
-                <h3 class="value-title">03. 期待を超える仕上がり</h3>
-                <p class="value-description">
-                    要求仕様を満たすだけでは物足りない。使う人に「感動」を届けることが、神谷の仕事です。
-                </p>
-                <ul class="value-points">
-                    <li>ローディングアニメーションまで配慮</li>
-                    <li>AI検索で自然な言葉で情報取得</li>
-                    <li>繰り返し作業を徹底的に自動化</li>
-                    <li>「もっと良くできる」の継続提案</li>
-                </ul>
+            <div class="pack-item">
+                <img src="./images/task-1.jpg" alt="タスク管理" class="pack-image-preview" onclick="openModal('task-modal')">
+                <div class="pack-name">タスク管理</div>
+                <div class="pack-price">50万円〜</div>
+                <div class="pack-period">納期: 1ヶ月〜</div>
+                <div class="pack-description">カンバンボード、期限管理、通知</div>
+            </div>
+
+            <div class="pack-item">
+                <img src="./images/invoice-1.jpg" alt="見積書・請求書" class="pack-image-preview" onclick="openModal('invoice-modal')">
+                <div class="pack-name">見積書・請求書</div>
+                <div class="pack-price">60万円〜</div>
+                <div class="pack-period">納期: 1-2ヶ月〜</div>
+                <div class="pack-description">自動計算、PDF生成、メール送信</div>
+            </div>
+
+            <div class="pack-item">
+                <img src="./images/saiyo-1.jpg" alt="採用管理" class="pack-image-preview" onclick="openModal('saiyo-modal')">
+                <div class="pack-name">採用管理</div>
+                <div class="pack-price">70万円〜</div>
+                <div class="pack-period">納期: 1-2ヶ月〜</div>
+                <div class="pack-description">応募者管理、選考フロー、面接記録</div>
+            </div>
+
+            <div class="pack-item">
+                <img src="./images/crm-1.jpg" alt="顧客管理(CRM)" class="pack-image-preview" onclick="openModal('crm-modal')">
+                <div class="pack-name">顧客管理(CRM)</div>
+                <div class="pack-price">60万円〜</div>
+                <div class="pack-period">納期: 1-2ヶ月〜</div>
+                <div class="pack-description">顧客情報管理、商談履歴、分析</div>
             </div>
         </div>
-    </section>
 
-    <!-- AI Philosophy -->
-    <section class="ai-philosophy" id="ai">
-        <h2 class="section-title">AI Utilization</h2>
-        <p class="section-subtitle">AIは手段であり、目的ではない</p>
-        <div class="ai-philosophy-content">
-            <div class="ai-philosophy-card">
-                <div class="ai-philosophy-text">
-                    <p class="ai-problem">
-                        今、あらゆるシステムが<span class="ai-highlight">「AI搭載」</span>を謳っている。<br>
-                        しかし、その多くは<span class="ai-emphasis">「AIが入っている」という事実</span>を語ることがゴールになっている。確かに自動応答はする。なんらかの作業もこなしてくれる。<br>
-                        だが、<span class="ai-highlight">「AIのおかげで劇的に楽になった」</span>と心から感じられるものは、驚くほど少ない。
-                    </p>
-                    <p>
-                        神谷のアプローチは違う。<br>
-                        <span class="ai-emphasis">AIを活用すること自体は、もはやゴールではない</span>。<br>
-                        AIは当たり前の前提であり、それ自体が強みになる時代は終わった。<br>
-                        本当に問われるのは、<span class="ai-emphasis">AIで何を実現するか</span>。<br>
-                        今までできなかった<span class="ai-emphasis">感動的な効率化</span>、究極の<span class="ai-emphasis">0秒化</span>を達成できなければ、AIを搭載する意味はない。
-                    </p>
-                    <div class="ai-conclusion">
-                        AIは当たり前。大切なのは、それで何を実現するか。
+        <!-- Modals for images -->
+        <div id="meishi-modal" class="modal" onclick="closeModal('meishi-modal')">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeModal('meishi-modal')">&times;</button>
+                <h3 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">名刺管理ツール</h3>
+                <div class="image-slider" id="meishi-slider">
+                    <button class="slider-nav prev" onclick="prevSlide('meishi-slider')">&lt;</button>
+                    <button class="slider-nav next" onclick="nextSlide('meishi-slider')">&gt;</button>
+                    <div class="slider-container">
+                        <img src="./images/meishi-1.jpg" alt="名刺管理ツール 1" class="slider-image">
+                        <img src="./images/meishi-2.jpg" alt="名刺管理ツール 2" class="slider-image">
+                    </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="slider-dot active" onclick="goToSlide('meishi-slider', 0)"></span>
+                    <span class="slider-dot" onclick="goToSlide('meishi-slider', 1)"></span>
+                </div>
+                <p style="margin-top: 1rem; color: var(--text-gray); text-align: center; font-size: 0.9rem;">※ 左右の矢印またはスワイプで画像を切り替えられます</p>
+            </div>
+        </div>
+
+        <div id="gijiroku-modal" class="modal" onclick="closeModal('gijiroku-modal')">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeModal('gijiroku-modal')">&times;</button>
+                <h3 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">議事録自動化</h3>
+                <div class="image-slider" id="gijiroku-slider">
+                    <button class="slider-nav prev" onclick="prevSlide('gijiroku-slider')">&lt;</button>
+                    <button class="slider-nav next" onclick="nextSlide('gijiroku-slider')">&gt;</button>
+                    <div class="slider-container">
+                        <img src="./images/gijiroku-1.jpg" alt="議事録自動化 1" class="slider-image">
+                        <img src="./images/gijiroku-2.jpg" alt="議事録自動化 2" class="slider-image">
+                    </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="slider-dot active" onclick="goToSlide('gijiroku-slider', 0)"></span>
+                    <span class="slider-dot" onclick="goToSlide('gijiroku-slider', 1)"></span>
+                </div>
+                <p style="margin-top: 1rem; color: var(--text-gray); text-align: center; font-size: 0.9rem;">※ 左右の矢印またはスワイプで画像を切り替えられます</p>
+            </div>
+        </div>
+
+        <div id="task-modal" class="modal" onclick="closeModal('task-modal')">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeModal('task-modal')">&times;</button>
+                <h3 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">タスク管理</h3>
+                <div class="image-slider" id="task-slider">
+                    <button class="slider-nav prev" onclick="prevSlide('task-slider')">&lt;</button>
+                    <button class="slider-nav next" onclick="nextSlide('task-slider')">&gt;</button>
+                    <div class="slider-container">
+                        <img src="./images/task-1.jpg" alt="タスク管理 1" class="slider-image">
+                        <img src="./images/task-2.jpg" alt="タスク管理 2" class="slider-image">
+                    </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="slider-dot active" onclick="goToSlide('task-slider', 0)"></span>
+                    <span class="slider-dot" onclick="goToSlide('task-slider', 1)"></span>
+                </div>
+                <p style="margin-top: 1rem; color: var(--text-gray); text-align: center; font-size: 0.9rem;">※ 左右の矢印またはスワイプで画像を切り替えられます</p>
+            </div>
+        </div>
+
+        <div id="invoice-modal" class="modal" onclick="closeModal('invoice-modal')">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeModal('invoice-modal')">&times;</button>
+                <h3 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">見積書・請求書</h3>
+                <div class="image-slider" id="invoice-slider">
+                    <button class="slider-nav prev" onclick="prevSlide('invoice-slider')">&lt;</button>
+                    <button class="slider-nav next" onclick="nextSlide('invoice-slider')">&gt;</button>
+                    <div class="slider-container">
+                        <img src="./images/invoice-1.jpg" alt="見積書・請求書 1" class="slider-image">
+                        <img src="./images/invoice-2.jpg" alt="見積書・請求書 2" class="slider-image">
+                    </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="slider-dot active" onclick="goToSlide('invoice-slider', 0)"></span>
+                    <span class="slider-dot" onclick="goToSlide('invoice-slider', 1)"></span>
+                </div>
+                <p style="margin-top: 1rem; color: var(--text-gray); text-align: center; font-size: 0.9rem;">※ 左右の矢印またはスワイプで画像を切り替えられます</p>
+            </div>
+        </div>
+
+        <div id="saiyo-modal" class="modal" onclick="closeModal('saiyo-modal')">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeModal('saiyo-modal')">&times;</button>
+                <h3 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">採用管理</h3>
+                <div class="image-slider" id="saiyo-slider">
+                    <button class="slider-nav prev" onclick="prevSlide('saiyo-slider')">&lt;</button>
+                    <button class="slider-nav next" onclick="nextSlide('saiyo-slider')">&gt;</button>
+                    <div class="slider-container">
+                        <img src="./images/saiyo-1.jpg" alt="採用管理 1" class="slider-image">
+                        <img src="./images/saiyo-2.jpg" alt="採用管理 2" class="slider-image">
+                    </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="slider-dot active" onclick="goToSlide('saiyo-slider', 0)"></span>
+                    <span class="slider-dot" onclick="goToSlide('saiyo-slider', 1)"></span>
+                </div>
+                <p style="margin-top: 1rem; color: var(--text-gray); text-align: center; font-size: 0.9rem;">※ 左右の矢印またはスワイプで画像を切り替えられます</p>
+            </div>
+        </div>
+
+        <div id="crm-modal" class="modal" onclick="closeModal('crm-modal')">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeModal('crm-modal')">&times;</button>
+                <h3 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">顧客管理(CRM)</h3>
+                <div class="image-slider" id="crm-slider">
+                    <button class="slider-nav prev" onclick="prevSlide('crm-slider')">&lt;</button>
+                    <button class="slider-nav next" onclick="nextSlide('crm-slider')">&gt;</button>
+                    <div class="slider-container">
+                        <img src="./images/crm-1.jpg" alt="顧客管理 1" class="slider-image">
+                        <img src="./images/crm-2.jpg" alt="顧客管理 2" class="slider-image">
+                    </div>
+                </div>
+                <div class="slider-dots">
+                    <span class="slider-dot active" onclick="goToSlide('crm-slider', 0)"></span>
+                    <span class="slider-dot" onclick="goToSlide('crm-slider', 1)"></span>
+                </div>
+                <p style="margin-top: 1rem; color: var(--text-gray); text-align: center; font-size: 0.9rem;">※ 左右の矢印またはスワイプで画像を切り替えられます</p>
+            </div>
+        </div>
+
+        <div style="max-width: 1000px; margin: 3rem auto;">
+            <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 2.5rem; border-radius: 15px; border-left: 5px solid var(--success-green);">
+                <h3 style="color: var(--success-green); font-size: 1.4rem; margin-bottom: 1.5rem; text-align: center;">✅ スピード導入パックの特徴</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">⚡ すぐに導入可能</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">既存機能のため即稼働</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">🎯 1機能から購入</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">手軽に始められる</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">🔧 カスタマイズ対応</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">基本的な調整が可能</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">📖 マニュアル付き</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">操作ガイド完備</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">🎁 1ヶ月無料サポート</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">導入後も安心</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Comparison -->
-    <section class="comparison" id="difference">
-        <h2 class="section-title">The Difference</h2>
-        <p class="section-subtitle">一般的な構築業者との決定的な違い</p>
-        <div class="comparison-intro">
-            同じ予算、同じ期間で開発しても、完成品は全く異なります。<br>
-            それは技術力の差ではなく、<strong>視点と姿勢の違い</strong>です。
-        </div>
+    <!-- Full Support Development -->
+    <section class="full-support" id="full-support">
+        <h2 class="section-title">フルサポート開発</h2>
+        <p class="section-subtitle">コンサルから構築まで、業務改革を伴走支援</p>
+        
+        <div class="support-highlight">
+            <div style="text-align: center;">
+                <span class="badge">⭐ 本格的なDX推進におすすめ</span>
+            </div>
+            
+            <div class="price-options">
+                <div class="price-option">
+                    <div class="price-option-label">月額制</div>
+                    <div class="price-option-value">45万円/月〜</div>
+                    <div class="price-option-detail">柔軟に進められるアジャイル開発</div>
+                </div>
+                <div class="price-option">
+                    <div class="price-option-label">一括払い</div>
+                    <div class="price-option-value">300〜600万円</div>
+                    <div class="price-option-detail">規模に応じた見積もり</div>
+                </div>
+            </div>
 
-        <div class="comparison-container">
-            <div class="comparison-side generic">
-                <div class="comparison-label">一般的な構築業者</div>
-                <ul class="comparison-features">
-                    <li>📝 仕様書通りに動けばOK</li>
-                    <li>🎨 デザインは二の次</li>
-                    <li>⚙️ 納品したら終わり</li>
-                    <li>💬 「それは仕様外です」が常套句</li>
-                    <li>🔧 改善提案はなし</li>
-                </ul>
-                <div class="comparison-screenshot">
-                    <div class="comparison-screenshot-content">
-                        <!-- 画像のパスを変更してください -->
-                        <img src="./images/generic-screenshot.jpg" 
-                             alt="一般的なkintoneの表示例" 
-                             class="screenshot-image"
-                             onclick="openModal(this.src)">
+            <h3 style="color: var(--primary-navy); font-size: 1.5rem; margin: 2rem 0 1.5rem; text-align: center;">
+                業務改革から実装まで、すべてお任せください
+            </h3>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">💡</div>
+                    <div class="feature-content">
+                        <h4>コンサルティング</h4>
+                        <p>業務フローの可視化と改善提案</p>
                     </div>
-                    <div class="screenshot-caption generic-caption">
-                        機能的だが無機質<br>使うのが義務になる
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📐</div>
+                    <div class="feature-content">
+                        <h4>全体設計</h4>
+                        <p>最適なシステム構成を設計</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-content">
+                        <h4>アジャイル開発</h4>
+                        <p>作りながら改善、柔軟に対応</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-content">
+                        <h4>要件変更対応</h4>
+                        <p>途中の変更も月単位で調整可能</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔗</div>
+                    <div class="feature-content">
+                        <h4>システム連携</h4>
+                        <p>既存システムとの連携も対応</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📚</div>
+                    <div class="feature-content">
+                        <h4>研修サポート</h4>
+                        <p>導入後の教育・定着支援</p>
                     </div>
                 </div>
             </div>
 
-            <div class="comparison-side kamiya">
-                <div class="comparison-label">神谷の開発</div>
-                <ul class="comparison-features">
-                    <li>✨ 使う人の感動を追求</li>
-                    <li>🎨 美しさと使いやすさを両立</li>
-                    <li>🎬 仕様書ではなくデモで見せる</li>
-                    <li>⚙️ 運用定着まで継続サポート</li>
-                    <li>💬 「こうしたらもっと良い」を提案</li>
-                    <li>🔧 使いながら進化し続ける</li>
-                </ul>
-                <div class="comparison-screenshot">
-                    <div class="comparison-screenshot-content">
-                        <!-- 画像のパスを変更してください -->
-                        <img src="./images/kamiya-screenshot.jpg" 
-                             alt="神谷のカスタマイズ例" 
-                             class="screenshot-image"
-                             onclick="openModal(this.src)">
+            <div class="process-flow">
+                <h3 style="color: var(--primary-navy); margin-bottom: 1rem; text-align: center;">開発の流れ</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="process-step-number">1</div>
+                        <div class="process-step-title">初期ヒアリング</div>
+                        <div class="process-step-description">課題の整理と目標設定(無料)</div>
                     </div>
-                    <div class="screenshot-caption kamiya-caption">
-                        直感的で美しく<br>使うのが楽しくなる
+                    <div class="process-step">
+                        <div class="process-step-number">2</div>
+                        <div class="process-step-title">業務設計</div>
+                        <div class="process-step-description">フロー可視化と改善提案</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">3</div>
+                        <div class="process-step-title">開発・構築</div>
+                        <div class="process-step-description">月単位で進めながら調整</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">4</div>
+                        <div class="process-step-title">納品・研修</div>
+                        <div class="process-step-description">操作研修とマニュアル提供</div>
                     </div>
                 </div>
-                <div class="comparison-notes">
-                    <div class="comparison-note">✓ 同じデータでもこれだけの差がある</div>
-                    <div class="comparison-note">✓ 直感的で最小タップで済む構成</div>
-                    <div class="comparison-note">✓ 情報が視覚的に整理され一目で理解できる</div>
+            </div>
+
+            <div class="info-box" style="margin-top: 2rem;">
+                <div class="info-box-title">💰 IT導入補助金活用で実質負担を軽減</div>
+                <div class="info-box-content">
+                    月額45万円×6ヶ月の場合、補助金活用で実質 <strong>135万円〜</strong>(通常270万円)
+                </div>
+            </div>
+        </div>
+
+        <div style="max-width: 1000px; margin: 3rem auto;">
+            <div style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); padding: 2.5rem; border-radius: 15px; border-left: 5px solid var(--primary-blue);">
+                <h3 style="color: var(--primary-blue); font-size: 1.4rem; margin-bottom: 1.5rem; text-align: center;">🎯 フルサポート開発が向いている方</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">📊 業務全体を改善</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">見直しから効率化まで</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">💬 相談しながら進行</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">何から始めるか一緒に</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">🔄 要件変更に対応</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">柔軟なアジャイル開発</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">🔗 機能を連携</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">複数システムの統合</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">💰 初期投資を抑制</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">月額制で負担分散</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Results -->
-    <section class="results" id="results">
-        <h2 class="section-title">Results</h2>
-        <p class="section-subtitle">業務を根本から再設計し、究極の効率化を実現</p>
-        <div class="results-philosophy">
-            業務を<span class="results-philosophy-highlight">時短</span>するのではなく、<br>
-            業務全体の構造から改革し<span class="results-philosophy-zero">０秒</span>を目指しています
+    <!-- DX Support Plan -->
+    <section class="dx-support" id="dx-support">
+        <h2 class="section-title">継続DX支援プラン</h2>
+        <p class="section-subtitle">納品後も安心。保守＋相談＋改善提案がすべて込み</p>
+        
+        <div class="support-card">
+            <div class="support-price-box">
+                <div class="support-price">月額10万円</div>
+                <div class="support-period">継続的な運用サポート</div>
+            </div>
+
+            <h3 style="color: var(--primary-navy); font-size: 1.5rem; margin: 2rem 0 1.5rem; text-align: center;">
+                保守だけじゃない。DXパートナーとして伴走します
+            </h3>
+
+            <ul class="included-list">
+                <li>システム保守・運用サポート</li>
+                <li>DX/AI/ITに関する相談し放題</li>
+                <li>月1回のオンラインMTG(戦略相談)</li>
+                <li>軽微な修正・改善対応</li>
+                <li>優先サポート(平日10-18時)</li>
+                <li>月次レポート</li>
+                <li>セキュリティアップデート</li>
+                <li>バックアップ管理</li>
+            </ul>
+
+            <div style="background: white; padding: 2rem; border-radius: 10px; margin-top: 2rem; border: 2px solid var(--success-green);">
+                <h4 style="color: var(--success-green); margin-bottom: 1rem; text-align: center;">💎 継続DX支援の価値</h4>
+                <p style="color: var(--text-dark); line-height: 1.8; text-align: center;">
+                    単なる保守ではなく、「DXパートナー」として継続的に伴走。<br>
+                    新しい業務課題が出てきたら相談、AIの活用方法を相談、<br>
+                    システムの改善提案など、常に最適化をサポートします。
+                </p>
+            </div>
         </div>
-        <div class="results-grid">
-            <div class="result-card">
-                <div class="result-icon">👥</div>
-                <div class="result-task">面接希望者のマスタ作成、履歴書回収、面接日程調整業務</div>
-                <div class="result-time">
-                    <span class="result-before">月40時間</span>
-                    <span class="result-arrow">→</span>
-                    <span class="result-after">0秒</span>
-                </div>
-            </div>
-            <div class="result-card">
-                <div class="result-icon">📝</div>
-                <div class="result-task">議事録を作成して参加者に共有。タスクを抽出し進捗管理ツールに登録</div>
-                <div class="result-time">
-                    <span class="result-before">2時間/回</span>
-                    <span class="result-arrow">→</span>
-                    <span class="result-after">0秒</span>
-                </div>
-            </div>
-            <div class="result-card">
-                <div class="result-icon">📋</div>
-                <div class="result-task">各リーダーから課題を集めて会議のアジェンダを作成し当日までに配布</div>
-                <div class="result-time">
-                    <span class="result-before">週1時間</span>
-                    <span class="result-arrow">→</span>
-                    <span class="result-after">0秒</span>
-                </div>
-            </div>
-            <div class="result-card">
-                <div class="result-icon">📊</div>
-                <div class="result-task">営業スタッフの日報</div>
-                <div class="result-time">
-                    <span class="result-before">30分/人</span>
-                    <span class="result-arrow">→</span>
-                    <span class="result-after">0秒</span>
+
+        <div style="max-width: 1000px; margin: 3rem auto;">
+            <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 2.5rem; border-radius: 15px; border-left: 5px solid var(--warning-orange);">
+                <h3 style="color: var(--warning-orange); font-size: 1.4rem; margin-bottom: 1.5rem; text-align: center;">✅ 継続DX支援プランが向いている方</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">🔒 安定稼働</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">システムを守りたい</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">💬 すぐ相談できる</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">困ったときの相手</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">🤖 AI/DX最新情報</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">常にキャッチアップ</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">🔄 継続改善</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">システムを育てる</div>
+                    </div>
+                    <div style="background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <div style="font-weight: 600; color: var(--primary-navy); margin-bottom: 0.5rem;">📊 月1定例MTG</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">戦略を相談</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta" id="contact">
-        <h2 class="cta-title">感動的な、業務効率体験を</h2>
-        <p class="cta-description">
-            まずはヒアリングを元にデモをご用意いたします。
-        </p>
-        <a href="mailto:t.hirano@mamayoro.com" class="cta-button">営業担当へ連絡</a>
-        <div class="cta-company">株式会社ままよろ　神谷真太郎</div>
+    <!-- Customer Journey -->
+    <section class="customer-journey" id="journey">
+        <h2 class="section-title">お客様の導入パターン</h2>
+        <p class="section-subtitle">3つの典型的な導入フロー</p>
+        
+        <div class="journey-grid">
+            <div class="journey-card">
+                <div class="journey-title">パターンA<br>小規模スタート</div>
+                <div class="journey-flow">
+                    <div class="journey-step">スピード導入パック<br>(50-70万円)</div>
+                    <div class="journey-arrow">↓</div>
+                    <div class="journey-step">使ってみて効果実感</div>
+                    <div class="journey-arrow">↓</div>
+                    <div class="journey-step">継続DX支援プラン<br>(月額10万円)</div>
+                    <div class="journey-arrow">↓</div>
+                    <div class="journey-step">徐々に機能拡張</div>
+                </div>
+            </div>
+
+            <div class="journey-card">
+                <div class="journey-title">パターンB<br>本格的DX推進</div>
+                <div class="journey-flow">
+                    <div class="journey-step">フルサポート開発<br>(月額45万円×N ヶ月)</div>
+                    <div class="journey-arrow">↓</div>
+                    <div class="journey-step">3-12ヶ月で構築完了</div>
+                    <div class="journey-arrow">↓</div>
+                    <div class="journey-step">継続DX支援プラン<br>(月額10万円)</div>
+                    <div class="journey-arrow">↓</div>
+                    <div class="journey-step">運用しながら改善</div>
+                </div>
+            </div>
+
+            <div class="journey-card">
+                <div class="journey-title">パターンC<br>既存システムあり</div>
+                <div class="journey-flow">
+                    <div class="journey-step">既にkintoneを導入済</div>
+                    <div class="journey-arrow">↓</div>
+                    <div class="journey-step">継続DX支援プランのみ契約<br>(月額10万円)</div>
+                    <div class="journey-arrow">↓</div>
+                    <div class="journey-step">運用サポート＋改善提案</div>
+                    <div class="journey-arrow">↓</div>
+                    <div class="journey-step">必要に応じて追加開発</div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Sticky CTA -->
-    <div class="sticky-cta" id="stickyCta">
-        <a href="mailto:t.hirano@mamayoro.com" class="sticky-cta-button">営業担当へ連絡</a>
-    </div>
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <h2 class="section-title">よくある質問</h2>
+        <p class="section-subtitle">お客様からよく寄せられる質問にお答えします</p>
+        
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">3つのサービスの違いは?</div>
+                <div class="faq-answer">
+                    スピード導入パックは既存機能を即導入、フルサポート開発は業務全体を設計から構築、継続DX支援プランは納品後の運用サポートです。段階に応じて組み合わせることも可能です。
+                </div>
+            </div>
 
-    <!-- Image Modal -->
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modalImage" onclick="event.stopPropagation()">
-    </div>
+            <div class="faq-item">
+                <div class="faq-question">フルサポート開発は月額と一括どちらがお得?</div>
+                <div class="faq-answer">
+                    月額制はアジャイルで柔軟に進められ、途中の変更にも対応しやすいメリットがあります。一括払いは予算が確定している場合に適しています。お客様の状況に応じてご提案します。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">継続DX支援プランだけの契約は可能?</div>
+                <div class="faq-answer">
+                    はい、可能です。既にkintoneを導入済みの企業様が、運用サポートや改善提案を求めて契約されるケースもあります。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">補助金の申請は難しいですか?</div>
+                <div class="faq-answer">
+                    フルサポート開発には補助金申請サポートが含まれています。必要書類の準備から申請まで、全面的にサポートいたします。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">kintoneのライセンス費用は別ですか?</div>
+                <div class="faq-answer">
+                    はい、別途必要です。ユーザー数により月額1,800円/人×人数の費用がかかります。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">どのサービスを選べばいいかわかりません</div>
+                <div class="faq-answer">
+                    まずは無料相談をご利用ください。お客様の状況をヒアリングし、最適なプランをご提案いたします。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">途中解約は可能ですか?</div>
+                <div class="faq-answer">
+                    継続DX支援プランは1ヶ月前の事前通知で解約可能です。フルサポート開発(月額制)の場合は、プロジェクトの進捗状況を見ながらご相談させていただきます。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">リモート対応は可能ですか?</div>
+                <div class="faq-answer">
+                    全国対応可能です。打ち合わせはオンライン、必要に応じて訪問も可能です。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">株式会社ままよろ</div>
+                <div style="opacity: 0.8; margin-bottom: 0.5rem;">営業担当: 平野</div>
+            </div>
+            
+            <div class="footer-contact">
+                <div style="opacity: 0.8; margin-bottom: 0.5rem;">お気軽にお問い合わせください</div>
+                <a href="mailto:t.hirano@mamayoro.com?subject=料金プランについてのお問い合わせ" class="footer-email">
+                    📧 t.hirano@mamayoro.com
+                </a>
+            </div>
+
+            <div style="opacity: 0.8; margin-top: 1.5rem;">営業時間: 平日 9:00-18:00(土日祝: オンライン相談のみ)</div>
+            
+            <div class="footer-links">
+                <a href="#overview">サービス概要</a>
+                <a href="#speed-pack">スピード導入</a>
+                <a href="#full-support">フルサポート</a>
+                <a href="#dx-support">DX支援</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div style="margin-top: 2rem; opacity: 0.6; font-size: 0.9rem;">
+                © 2025 株式会社ままよろ All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Modal functions
-        function openModal(imageSrc) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            modal.classList.add('active');
-            modalImg.src = imageSrc;
-            document.body.style.overflow = 'hidden';
-        }
+        // Slider management object
+        const sliders = {};
 
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal with ESC key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Navigation
-        const nav = document.getElementById('nav');
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        // Hamburger menu
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu on link click
-        navLinks.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Scroll effects
-        const stickyCta = document.getElementById('stickyCta');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', function() {
-            const currentScroll = window.pageYOffset;
-
-            // Show/hide nav
-            if (currentScroll > 100) {
-                nav.classList.add('visible');
-            } else {
-                nav.classList.remove('visible');
-            }
-
-            // Sticky CTA (mobile only)
-            if (window.innerWidth <= 1024) {
-                const ctaSection = document.getElementById('contact');
-                const ctaSectionTop = ctaSection.offsetTop;
-                const scrollBottom = currentScroll + window.innerHeight;
-
-                if (scrollBottom >= ctaSectionTop - 100) {
-                    stickyCta.classList.remove('visible');
-                } else if (currentScroll > window.innerHeight * 0.8) {
-                    stickyCta.classList.add('visible');
-                } else {
-                    stickyCta.classList.remove('visible');
+        // Initialize slider
+        function initSlider(sliderId) {
+            if (!sliders[sliderId]) {
+                sliders[sliderId] = {
+                    currentIndex: 0,
+                    touchStartX: 0,
+                    touchEndX: 0,
+                    isDragging: false
+                };
+                
+                const slider = document.getElementById(sliderId);
+                if (slider) {
+                    // Add touch event listeners
+                    slider.addEventListener('touchstart', handleTouchStart, { passive: true });
+                    slider.addEventListener('touchmove', handleTouchMove, { passive: true });
+                    slider.addEventListener('touchend', handleTouchEnd, { passive: true });
                 }
             }
+        }
 
-            lastScroll = currentScroll;
+        // Handle touch start
+        function handleTouchStart(e) {
+            const sliderId = e.currentTarget.id;
+            sliders[sliderId].touchStartX = e.touches[0].clientX;
+            sliders[sliderId].isDragging = true;
+        }
+
+        // Handle touch move
+        function handleTouchMove(e) {
+            const sliderId = e.currentTarget.id;
+            if (!sliders[sliderId].isDragging) return;
+            sliders[sliderId].touchEndX = e.touches[0].clientX;
+        }
+
+        // Handle touch end
+        function handleTouchEnd(e) {
+            const sliderId = e.currentTarget.id;
+            if (!sliders[sliderId].isDragging) return;
+            
+            sliders[sliderId].isDragging = false;
+            const diffX = sliders[sliderId].touchStartX - sliders[sliderId].touchEndX;
+            
+            // Swipe threshold
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    // Swipe left - next slide
+                    nextSlide(sliderId);
+                } else {
+                    // Swipe right - previous slide
+                    prevSlide(sliderId);
+                }
+            }
+        }
+
+        // Go to specific slide
+        function goToSlide(sliderId, index) {
+            initSlider(sliderId);
+            
+            const slider = document.getElementById(sliderId);
+            if (!slider) return;
+            
+            const container = slider.querySelector('.slider-container');
+            const images = container.querySelectorAll('.slider-image');
+            const dots = slider.parentElement.querySelectorAll('.slider-dot');
+            
+            // Clamp index
+            index = Math.max(0, Math.min(index, images.length - 1));
+            sliders[sliderId].currentIndex = index;
+            
+            // Update transform
+            container.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Next slide
+        function nextSlide(sliderId) {
+            initSlider(sliderId);
+            
+            const slider = document.getElementById(sliderId);
+            if (!slider) return;
+            
+            const images = slider.querySelectorAll('.slider-image');
+            const newIndex = (sliders[sliderId].currentIndex + 1) % images.length;
+            goToSlide(sliderId, newIndex);
+        }
+
+        // Previous slide
+        function prevSlide(sliderId) {
+            initSlider(sliderId);
+            
+            const slider = document.getElementById(sliderId);
+            if (!slider) return;
+            
+            const images = slider.querySelectorAll('.slider-image');
+            const newIndex = (sliders[sliderId].currentIndex - 1 + images.length) % images.length;
+            goToSlide(sliderId, newIndex);
+        }
+
+        // Modal functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Initialize slider when modal opens
+                const slider = modal.querySelector('.image-slider');
+                if (slider) {
+                    initSlider(slider.id);
+                    goToSlide(slider.id, 0);
+                }
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    this.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
         });
 
         // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#contact' || targetId === '#') {
-                    const target = document.getElementById('contact');
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                } else {
-                    const target = document.querySelector(targetId);
-                    if (target) {
-                        const offset = 80;
-                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                    }
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Initialize all sliders on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.image-slider').forEach(slider => {
+                initSlider(slider.id);
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        // Apply animation to elements
-        document.querySelectorAll('.value-card, .result-card, .comparison-side').forEach(function(el) {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(el);
-        });
-
-        // Resize handler
-        let resizeTimer;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                if (window.innerWidth > 1024) {
-                    stickyCta.classList.remove('visible');
-                    navLinks.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }
-            }, 250);
         });
     </script>
 </body>
